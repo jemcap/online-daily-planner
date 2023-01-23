@@ -23,14 +23,26 @@ $(document).ready(function() {
     // Initialise the starting hour
     function renderPlanner(today, events) {
         let hourRow = moment(today).hour(9); // This will start the rows from 9
-        let calender = $(".container");
+        let calendar = $(".container");
         calendar.empty();
 
         // Increment the number of rows by 1 and display it on the page
         // Increment until 'X' number of rows is displayed
         for (i = 1; i < 10; i++) {
             let row = $("<div>").addClass("row");
-        }
-    }
+
+            calendar.append(row);
+            row.append($("<div>").addClass("col-2 hour").text(hourRow.format("h A")));
+            let timeBlock = hourRow.format("hA");
+            row.append($("<textarea>").addClass(`col-8 ${classOfHour}`).text(events[timeBlock]));
+            row.append($("<button>").addClass("col-2 saveBtn").html("<i class='fas fa-save'></i>").attr("aria-label", "Save").attr("id", hourRow.format("hA")));
+
+            hourRow.add(1, "hour");
+
+            hourRendered = moment();
+        };
+    };
+
+    renderPlanner(today, events);
 
 });
