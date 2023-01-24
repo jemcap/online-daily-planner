@@ -87,7 +87,7 @@ $(document).ready(function () {
       if (moment().isAfter(hourRendered, "minute")) {
         startPlanner();
       }
-    }, 60000);
+    }, 600000);
   }
 
   // Store events with local Storage
