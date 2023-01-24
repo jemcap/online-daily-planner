@@ -32,4 +32,4 @@ Please make sure to update tests as appropriate.
 https://snipboard.io/UtNjEr.jpg
 
 ### Deployed Application
-https://jemcap.github.io/code-quiz/
+https://jemcap.github.io/online-daily-planner/
